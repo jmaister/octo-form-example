@@ -1001,10 +1001,10 @@ object-assign@^4.1.1:
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==
 
-octo-form@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/octo-form/-/octo-form-1.0.1.tgz#b5e61ee6ff15ff95c8f89084a3c9ded8ab6deacc"
-  integrity sha512-V3ak3aZQaXYTIj2xrV+JRdaRoURKbOa9aPndhj++O+jcmU0oI8eK5ISfyfuAsQk2DEmaIU1mZe4m+zyuxelIRQ==
+octo-form@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/octo-form/-/octo-form-1.0.2.tgz#b03dec3b8624d93babbb2ab84a81a5e7c02a7b55"
+  integrity sha512-wp3CNVCUtE1+8Kz+O1XZ88Zh0jmDEsE7vZKF1ilJSm1Jz75EFCT1Zzm6jmMHBrjnU16fpqGdQ8UMHB3t1/3GPQ==
   dependencies:
     "@date-io/date-fns" "2.15.0"
     "@emotion/react" "11.10.0"

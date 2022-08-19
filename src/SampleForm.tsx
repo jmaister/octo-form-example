@@ -1,17 +1,12 @@
 
 import * as yup from "yup";
-import { OptionLabel } from "./components/FormInputProps";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
-import { FormInputText } from "./components/FormInputText";
-import { FormInputDropdown } from "./components/FormInputDropdown";
-import { FormInputDate } from "./components/FormInputDate";
-import { FormInputDateTime } from "./components/FormInputDateTime";
-import { FormInputMultiCheckbox } from "./components/FormInputMultiCheckbox";
-import { FormInputSlider } from "./components/FormInputSlider";
+import {OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate, FormInputDateTime, FormInputMultiCheckbox, FormInputSlider} from "octo-form";
+
 import { SubmitHandler } from "react-hook-form";
-import MuyForm from "./OctoForm";
+
 
 
 const iceCreamOptions: OptionLabel[] = [
@@ -56,7 +51,7 @@ export function SampleForm({ defaultValues }: SampleFormProps) {
   }
 
 
-  return <MuyForm defaultValues={defaultValues} schema={schema} onSubmit={onSubmit}>
+  return <OctoForm defaultValues={defaultValues} schema={schema} onSubmit={onSubmit}>
         <Stack spacing={2}>
 
           <FormInputText name="example" label="Example" />
@@ -104,6 +99,6 @@ export function SampleForm({ defaultValues }: SampleFormProps) {
         <div>{JSON.stringify(watch(), null, 2)}</div>
 */}
 
-  </MuyForm>
+  </OctoForm>
 
 }
