@@ -3,7 +3,7 @@ import * as yup from "yup";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
-import {OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate, FormInputDateTime, FormInputMultiCheckbox, FormInputSlider} from "octo-form";
+import { OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate, FormInputDateTime, FormInputMultiCheckbox, FormInputSlider } from "octo-form";
 
 import { SubmitHandler } from "react-hook-form";
 
@@ -52,52 +52,52 @@ export function SampleForm({ defaultValues }: SampleFormProps) {
 
 
   return <OctoForm defaultValues={defaultValues} schema={schema} onSubmit={onSubmit}>
-        <Stack spacing={2}>
+    <Stack spacing={2}>
 
-          <FormInputText name="example" label="Example" />
+      <FormInputText name="example" label="Example" />
 
-          <FormInputText name="exampleRequired" label="Example required" />
+      <FormInputText name="exampleRequired" label="Example required" />
 
-          <FormInputDropdown
-            name="iceCreamType"
-            label="Ice Cream Type"
-            options={iceCreamOptions}
-          />
+      <FormInputDropdown
+        name="iceCreamType"
+        label="Ice Cream Type"
+        options={iceCreamOptions}
+      />
 
-          <FormInputText name="age" label="Age" />
+      <FormInputText name="age" label="Age" />
 
-          <FormInputDate
-            name="todaysDate"
-            label="Today's date"
-          />
+      <FormInputDate
+        name="todaysDate"
+        label="Today's date"
+      />
 
-          <FormInputDateTime
-            name="todaysDateAndTime"
-            label="Today's date and time"
-          />
+      <FormInputDateTime
+        name="todaysDateAndTime"
+        label="Today's date and time"
+      />
 
-          <FormInputMultiCheckbox
-            name="days"
-            label="Days"
-            options={dayOptions}
-          />
+      <FormInputMultiCheckbox
+        name="days"
+        label="Days"
+        options={dayOptions}
+      />
 
-          <FormInputSlider
-            name="volume"
-            label="Volume"
-          />
+      <FormInputSlider
+        name="volume"
+        label="Volume"
+      />
 
-          <Stack direction="row">
-            <Button
-              type="submit"
-              variant="contained"
-            >Submit</Button>
-          </Stack>
-        </Stack>
+      <Stack direction="row">
+        <Button
+          type="submit"
+          variant="contained"
+        >Submit</Button>
+      </Stack>
+    </Stack>
 
-{/*
+    {/*
         <div>{JSON.stringify(watch(), null, 2)}</div>
-*/}
+    */}
 
   </OctoForm>
 
