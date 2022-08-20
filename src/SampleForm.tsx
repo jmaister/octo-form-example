@@ -44,7 +44,7 @@ export interface SampleFormProps {
   defaultValues: SampleFormType;
 }
 
-export function SampleForm({ defaultValues }: SampleFormProps) {
+export default function SampleForm({ defaultValues }: SampleFormProps) {
 
   const onSubmit: SubmitHandler<SampleFormType> = (data) => {
     console.log(data);
