@@ -3,9 +3,10 @@ import * as yup from "yup";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
-import { OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate, FormInputDateTime, FormInputMultiCheckbox, FormInputSlider } from "octo-form";
+import { OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate, FormInputDateTime, FormInputMultiCheckbox, FormInputSlider, FormInputCheckbox } from "octo-form";
 
 import { SubmitHandler } from "react-hook-form";
+import { FormRenderContext, OctoFormContext } from "octo-form";
 
 
 
@@ -36,6 +37,7 @@ const schema = yup.object({
   todaysDateAndTime: yup.date().required(),
   days: yup.array().of(yup.string().required().oneOf(dayOptions.filter(o => o.label != "").map(option => option.value.toString()))).required(),
   volume: yup.number().positive().integer().min(0).max(10).required(),
+  isVegan: yup.boolean().required(),
 });
 
 export type SampleFormType = yup.InferType<typeof schema>;
@@ -46,52 +48,37 @@ export interface SampleFormProps {
 
 export default function SampleForm({ defaultValues }: SampleFormProps) {
 
-  const onSubmit: SubmitHandler<SampleFormType> = (data) => {
+  const onSubmit: SubmitHandler<SampleFormType> = async (data) => {
     console.log(data);
+    await fetch("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8");
   }
 
 
-  return <OctoForm defaultValues={defaultValues} schema={schema} onSubmit={onSubmit}>
+  return <OctoForm defaultValues={defaultValues} schema={schema} onSubmit={onSubmit} formEnabled={true}>
     <Stack spacing={2}>
 
       <FormInputText name="example" label="Example" />
-
       <FormInputText name="exampleRequired" label="Example required" />
-
-      <FormInputDropdown
-        name="iceCreamType"
-        label="Ice Cream Type"
-        options={iceCreamOptions}
-      />
-
+      <FormInputDropdown name="iceCreamType" label="Ice Cream Type" options={iceCreamOptions} />
       <FormInputText name="age" label="Age" />
-
-      <FormInputDate
-        name="todaysDate"
-        label="Today's date"
-      />
-
-      <FormInputDateTime
-        name="todaysDateAndTime"
-        label="Today's date and time"
-      />
-
-      <FormInputMultiCheckbox
-        name="days"
-        label="Days"
-        options={dayOptions}
-      />
-
-      <FormInputSlider
-        name="volume"
-        label="Volume"
-      />
+      <FormInputDate name="todaysDate" label="Today's date" />
+      <FormInputDateTime name="todaysDateAndTime" label="Today's date and time" />
+      <FormInputMultiCheckbox name="days" label="Days" options={dayOptions} />
+      <FormInputSlider name="volume" label="Volume" />
+      <FormInputCheckbox name="isVegan" label="Vegan" />
 
       <Stack direction="row">
-        <Button
-          type="submit"
-          variant="contained"
-        >Submit</Button>
+        <OctoFormContext.Consumer>
+          {(context:FormRenderContext<SampleFormType>) => {
+            return <Button
+                      type="submit"
+                      variant="contained"
+                      disabled={context.formState.isSubmitting || !context.formEnabled}
+                      >
+                      Submit
+              </Button>
+          }}
+        </OctoFormContext.Consumer>
       </Stack>
     </Stack>
 

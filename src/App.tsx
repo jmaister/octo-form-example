@@ -16,6 +16,7 @@ function App() {
     todaysDateAndTime: new Date(),
     example: "",
     exampleRequired: "",
+    isVegan: false,
   }
 
   return (
