@@ -7,6 +7,7 @@ import { OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate,
 
 import { SubmitHandler } from "react-hook-form";
 import { FormRenderContext, OctoFormContext } from "octo-form";
+import { ReasonsBox } from "./ReasonsBox";
 
 
 
@@ -38,6 +39,10 @@ const schema = yup.object({
   days: yup.array().of(yup.string().required().oneOf(dayOptions.filter(o => o.label != "").map(option => option.value.toString()))).required(),
   volume: yup.number().positive().integer().min(0).max(10).required(),
   isVegan: yup.boolean().required(),
+  reasons: yup.array().of(yup.object({
+    id: yup.string().required(),
+    description: yup.string().required(),
+  }))
 });
 
 export type SampleFormType = yup.InferType<typeof schema>;
@@ -66,6 +71,8 @@ export default function SampleForm({ defaultValues }: SampleFormProps) {
       <FormInputMultiCheckbox name="days" label="Days" options={dayOptions} />
       <FormInputSlider name="volume" label="Volume" />
       <FormInputCheckbox name="isVegan" label="Vegan" />
+
+      <ReasonsBox></ReasonsBox>
 
       <Stack direction="row">
         <OctoFormContext.Consumer>

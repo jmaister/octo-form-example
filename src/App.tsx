@@ -17,6 +17,9 @@ function App() {
     example: "",
     exampleRequired: "",
     isVegan: false,
+    reasons: [
+      {id: "1", description: "reason 1"},
+    ]
   }
 
   return (
