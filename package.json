@@ -10,12 +10,15 @@
     "reset": "npx rimraf node_modules && yarn install && yarn link octo-form"
   },
   "dependencies": {
+    "@date-io/date-fns": "^2.15.0",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "@mui/material": "^5.10.1",
-    "octo-form": "^1",
+    "@mui/material": "^5.10.2",
+    "@mui/x-date-pickers": "5.0.0-beta.7",
+    "octo-form": "^1.0.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
