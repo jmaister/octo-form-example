@@ -3,9 +3,8 @@ import * as yup from "yup";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 
-import { OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate, FormInputDateTime, FormInputMultiCheckbox, FormInputSlider, FormInputCheckbox } from "octo-form";
+import { OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate, FormInputDateTime, FormInputMultiCheckbox, FormInputSlider, FormInputCheckbox, OnSubmitFnType } from "octo-form";
 
-import { SubmitHandler } from "react-hook-form";
 import { FormRenderContext, OctoFormContext } from "octo-form";
 import { ReasonsBox } from "./ReasonsBox";
 
@@ -53,7 +52,7 @@ export interface SampleFormProps {
 
 export default function SampleForm({ defaultValues }: SampleFormProps) {
 
-  const onSubmit: SubmitHandler<SampleFormType> = async (data) => {
+  const onSubmit: OnSubmitFnType<SampleFormType> = async (data, context) => {
     console.log(data);
     await fetch("https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8");
   }
