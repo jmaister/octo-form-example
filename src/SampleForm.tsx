@@ -8,7 +8,7 @@ import { OctoForm, FormInputText, OptionLabel, FormInputDropdown, FormInputDate,
 import { FormRenderContext, OctoFormContext } from "octo-form";
 import { ReasonsBox } from "./ReasonsBox";
 
-
+import esLocale from 'date-fns/locale/es'
 
 const iceCreamOptions: OptionLabel[] = [
   { value: "", label: "-- no flavor --" },
@@ -31,7 +31,7 @@ const dayOptions: OptionLabel[] = [
 const schema = yup.object({
   example: yup.string(),
   exampleRequired: yup.string().required(),
-  iceCreamType: yup.string().oneOf(iceCreamOptions.filter(o => o.label != "").map(option => option.value.toString())),
+  iceCreamType: yup.string().required().oneOf(iceCreamOptions.filter(o => o.label != "").map(option => option.value.toString())),
   age: yup.number().positive().integer().moreThan(0).required(),
   todaysDate: yup.date().required(),
   todaysDateAndTime: yup.date().required(),
@@ -58,7 +58,7 @@ export default function SampleForm({ defaultValues }: SampleFormProps) {
   }
 
 
-  return <OctoForm defaultValues={defaultValues} schema={schema} onSubmit={onSubmit} formEnabled={true}>
+  return <OctoForm defaultValues={defaultValues} schema={schema} onSubmit={onSubmit} formEnabled={true} locale={esLocale}>
     <Stack spacing={2}>
 
       <FormInputText name="example" label="Example" />
