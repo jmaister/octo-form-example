@@ -1,5 +1,6 @@
 import { Button, Paper, Stack } from "@mui/material";
-import { FormInputText, OctoFormContext } from "octo-form";
+import { OctoFormContext } from "octo-form";
+import {FormInputText} from "octo-form";
 import { useContext } from "react";
 
 import { useFieldArray } from "react-hook-form";
@@ -25,10 +26,10 @@ export const ReasonsBox = () => {
                     <FormInputText name={`reasons.${index}.id`} label="ID" />
                     <FormInputText name={`reasons.${index}.description`} label="Description" />
                 </Stack>
-                <Button onClick={() => remove(index)}>-</Button>
+                <Button onClick={() => remove(index)} variant="contained">-</Button>
             </Paper>
         ))}
-        <Button onClick={() => append({id:"", description:""})}>+</Button>
+        <Button onClick={() => append({id:"", description:""})} variant="contained">+</Button>
     </div>
 
 }

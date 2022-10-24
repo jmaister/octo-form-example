@@ -10,21 +10,21 @@
     "reset": "npx rimraf node_modules && yarn install && yarn link octo-form"
   },
   "dependencies": {
-    "@date-io/date-fns": "^2.15.0",
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "@mui/material": "^5.10.6",
-    "@mui/x-date-pickers": "^5.0.3",
-    "octo-form": "^1.0.15",
+    "@date-io/date-fns": "^2.16.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.9",
+    "@mui/x-date-pickers": "^5.0.4",
+    "octo-form": "^1.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.0.1",
-    "typescript": "^4.6.4",
-    "vite": "^3.0.7"
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@vitejs/plugin-react": "^2.1.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.8"
   }
 }
